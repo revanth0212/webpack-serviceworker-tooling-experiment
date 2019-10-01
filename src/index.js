@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import './sw.js';
+// import './sw.js';
 
 async function component() {
   const element = document.createElement('div');
@@ -9,7 +9,7 @@ async function component() {
   const cows = await cowsRes.text();
   element.innerHTML = _.join(['Hello', 'webpack'], cows);
 
-  return element;
+  document.body.appendChild(element);
 }
 
-document.body.appendChild(component());
+component();
